@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SurpoLab5
 {
-    internal class CurrencyConventer
+    internal class CurrencyConverter
     {
         private Dictionary<DateTime, decimal> historicalRates = new Dictionary<DateTime, decimal>
         {
@@ -19,6 +19,11 @@ namespace SurpoLab5
         public decimal Convert(decimal amount, decimal convertionRate)
         {
             ValidateRate(convertionRate);
+            return PerformConversion(amount, convertionRate);
+        }
+
+        private decimal PerformConversion(decimal amount, decimal convertionRate)
+        {
             return amount * convertionRate;
         }
 
