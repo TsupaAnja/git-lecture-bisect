@@ -29,7 +29,8 @@ namespace SurpoLab5
 
         private void ValidateRate(decimal rate)
         {
-            // Здесь нет реальной проверки, прото заглушка для возможных будущих проверок
+            if (rate < 0.01M)
+                throw new ArgumentException("Предлагаемый коэффицент кажется слишком маленьким, перепроверьте плиз");
         }
 
         public decimal GetHistoricalRate(DateTime date)
