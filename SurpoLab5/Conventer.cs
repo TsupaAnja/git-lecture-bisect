@@ -15,6 +15,7 @@ namespace SurpoLab5
             {new DateTime(2022, 3,1), 0.87M}
         };
 
+        private List<string> favorites = new List<string>();
         
         public decimal Convert(decimal amount, decimal convertionRate)
         {
@@ -39,5 +40,27 @@ namespace SurpoLab5
                 rate : 
                 throw new ArgumentException("Заданное историческое значение не было найдено в БД");
         }
+
+        public void AddToFavorites(string currencyCode)
+        {
+            if (!favorites.Contains(currencyCode))
+            {
+                favorites.Add(currencyCode);
+            }
+        }
+
+        public void RemoveFromFavorites(string currencyCode)
+        {
+            if (!favorites.Contains(currencyCode))
+            {
+                favorites.Remove(currencyCode);
+            }
+        }
+
+        public IEnumerable<string> GetFavorites()
+        {
+            return favorites.AsReadOnly();
+        }
+
     }
 }
