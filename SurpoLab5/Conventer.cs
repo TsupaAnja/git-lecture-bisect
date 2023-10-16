@@ -30,7 +30,7 @@ namespace SurpoLab5
 
         private void ValidateRate(decimal rate)
         {
-            if (rate < 0.01M)
+            if (rate < 0.00001M)
                 throw new ArgumentException("Предлагаемый коэффицент кажется слишком маленьким, перепроверьте плиз");
         }
 
@@ -61,6 +61,8 @@ namespace SurpoLab5
         {
             return favorites.AsReadOnly();
         }
+
+        //
 
     }
 }
