@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SurpoLab5
 {
+    /// <summary>
+    /// Базовый класс для конвертации валют
+    /// </summary>
     internal class CurrencyConverter
     {
         private Dictionary<DateTime, decimal> historicalRates = new Dictionary<DateTime, decimal>
